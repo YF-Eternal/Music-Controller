@@ -5,6 +5,8 @@
 
 🌍 可在 Windows10/11 操作系统中运行。
 
+本项目使用了 [FFmpeg](https://www.ffmpeg.org/) 作为音频处理的核心库。
+
 ![Music-Controller](images/Music-Controller-CN.png)
 
 Music Controller 是一款音乐变速软件，可以调整音乐的播放速度和音量。通过简单的界面操作，你可以轻松地导入音乐文件，调整播放速度和音量，并将处理后的音乐导出到指定目录。

@@ -4,36 +4,31 @@
 #include <QDialog>
 #include <QLabel>
 #include <QPushButton>
+#include <QString>
 #include <QVBoxLayout>
+#include <QProcess>  // Include QProcess for command execution
 
 class CustomDialog : public QDialog {
     Q_OBJECT
 
 public:
-    // Constructor: Initializes the CustomDialog instance
     explicit CustomDialog(QWidget* parent = nullptr);
-
-    // Sets the message displayed in the dialog
-    void setMessage(const QString& message);
-
-    // Sets the file operation path
-    void setFilePath(const QString& path);
+    void setMessage(const QString& message);  // Set the message to display
+    void setFilePath(const QString& path);  // Set the file path
+    ~CustomDialog();  // Destructor declaration
 
 private slots:
-    // Slot function: Opens the folder containing the file
-    void openFolder();
-
-    // Slot function: Plays the file
-    void play();
+    void openFolder();  // Open folder and select file
+    void play();  // Play the file
 
 private:
-    QLabel* messageLabel;         // Label to display the message
-    QPushButton* openFolderButton; // Button to open the folder
-    QPushButton* playButton;       // Button to play the file
-    QString filePath;             // File path
+    QLabel* messageLabel;  // Label to display the message
+    QPushButton* openFolderButton;  // Button to open the folder
+    QPushButton* playButton;  // Play button
+    QString filePath;  // File path
 
-    // Plays a system sound notification
-    void playSystemSound();
+    QProcess* process;  // QProcess to execute commands
+    void playSystemSound();  // Play the system notification sound
 };
 
 #endif // CUSTOMDIALOG_H

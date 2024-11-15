@@ -4,6 +4,7 @@
 #include <QUrl>
 #include <QProcess>
 #include <Windows.h>
+#include <QDir>
 
 // 构造函数：初始化 CustomDialog 实例
 CustomDialog::CustomDialog(QWidget* parent)
@@ -50,21 +51,37 @@ void CustomDialog::setFilePath(const QString& path) {
     filePath = path;
 }
 
-// 打开包含文件的文件夹
+// 使用 Windows API 打开文件夹并选中文件
 void CustomDialog::openFolder() {
-    QFileInfo fileInfo(filePath);
-    QString folderPath = fileInfo.absolutePath();
-    QDesktopServices::openUrl(QUrl::fromLocalFile(folderPath));
+    QFileInfo fileInfo(filePath);  // 获取文件信息
+    if (fileInfo.exists()) {  // 如果文件存在
+        // 获取文件所在的文件夹路径
+        QString folderPath = QDir::toNativeSeparators(fileInfo.absolutePath());
+        QString fileName = fileInfo.fileName();
+
+        // 构建命令，使用 explorer 打开文件所在文件夹并选中文件
+        QString fullPath = folderPath + "\\" + fileName;
+
+        // 使用 ShellExecute 打开文件夹并选中文件
+        // 转换为宽字符字符串
+        std::wstring widePath = fullPath.toStdWString();
+        ShellExecute(NULL, L"open", L"explorer.exe", (L"/select,\"" + widePath + L"\"").c_str(), NULL, SW_SHOWNORMAL);
+    }
 }
 
 // 播放文件
 void CustomDialog::play() {
-    QString command = "explorer \"" + filePath + "\""; // 使用系统默认的播放器播放文件
+    QString command = "explorer \"" + filePath + "\"";  // 使用系统默认的播放器播放文件
     QProcess::startDetached(command);
 }
 
 // 播放系统提示音
 void CustomDialog::playSystemSound() {
     // 播放系统默认通知声音
-    MessageBeep(MB_OK); // 使用 MessageBeep 播放默认系统声音
+    MessageBeep(MB_OK);  // 使用 MessageBeep 播放默认系统声音
+}
+
+// 析构函数：Qt 会自动管理 QProcess 的内存，因此无需手动删除
+CustomDialog::~CustomDialog() {
+    // 不需要删除 process，Qt 会自动管理
 }

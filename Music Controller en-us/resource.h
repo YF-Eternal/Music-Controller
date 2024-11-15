@@ -2,7 +2,7 @@
 // Microsoft Visual C++ generated include file.
 // Used by Music Controller.rc
 
-// Default values for new objects
+// The next set of default values ​​for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS

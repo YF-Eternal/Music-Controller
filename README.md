@@ -5,6 +5,8 @@
 
 🌍 Runs on Windows 10/11.
 
+This project uses [FFmpeg](https://www.ffmpeg.org/) as the core library for audio processing.
+
 ![Music-Controller](images/Music-Controller.png)
 
 Music Controller is a music tempo adjustment software that allows you to adjust the playback speed and volume of your music. With a simple interface, you can easily import music files, adjust playback speed and volume, and export the processed music to a specified directory.

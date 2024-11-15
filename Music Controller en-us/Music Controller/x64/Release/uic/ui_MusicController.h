@@ -64,12 +64,12 @@ public:
         MainWindow->setMinimumSize(QSize(775, 395));
         MainWindow->setMaximumSize(QSize(775, 395));
         QFont font;
-        font.setFamilies({QString::fromUtf8("Microsoft YaHei")});
+        font.setFamilies({QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221")});
         MainWindow->setFont(font);
         QIcon icon;
         icon.addFile(QString::fromUtf8("C:/Users/yfete/.designer/backup/icon.ico"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         MainWindow->setWindowIcon(icon);
-        MainWindow->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
+        MainWindow->setLocale(QLocale(QLocale::Chinese, QLocale::China));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         groupBox = new QGroupBox(centralwidget);
@@ -112,7 +112,7 @@ public:
         volumeSlider->setMaximumSize(QSize(40, 269));
         volumeSlider->setFont(font);
         volumeSlider->setStyleSheet(QString::fromUtf8(""));
-        volumeSlider->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
+        volumeSlider->setLocale(QLocale(QLocale::Chinese, QLocale::China));
         volumeSlider->setMinimum(-30);
         volumeSlider->setMaximum(30);
         volumeSlider->setValue(0);
@@ -163,7 +163,7 @@ public:
         speedSpinBox->setMinimumSize(QSize(100, 24));
         speedSpinBox->setMaximumSize(QSize(100, 24));
         speedSpinBox->setFont(font);
-        speedSpinBox->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
+        speedSpinBox->setLocale(QLocale(QLocale::Chinese, QLocale::China));
         speedSpinBox->setMinimum(50);
         speedSpinBox->setMaximum(1000);
         speedSpinBox->setValue(100);
@@ -173,11 +173,10 @@ public:
         speedLabel = new QLabel(groupBox_3);
         speedLabel->setObjectName("speedLabel");
         speedLabel->setGeometry(QRect(280, 20, 181, 21));
-        speedLabel->setStyleSheet(QString::fromUtf8("font: 12pt \"Microsoft YaHei\";"));
+        speedLabel->setStyleSheet(QString::fromUtf8("font: 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         groupBox_4 = new QGroupBox(centralwidget);
         groupBox_4->setObjectName("groupBox_4");
         groupBox_4->setGeometry(QRect(20, 10, 631, 91));
-        groupBox_4->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         layoutWidget1 = new QWidget(groupBox_4);
         layoutWidget1->setObjectName("layoutWidget1");
         layoutWidget1->setGeometry(QRect(40, 30, 561, 44));
@@ -187,7 +186,7 @@ public:
         fileNameLabel = new QLabel(layoutWidget1);
         fileNameLabel->setObjectName("fileNameLabel");
         fileNameLabel->setMaximumSize(QSize(483, 15));
-        fileNameLabel->setStyleSheet(QString::fromUtf8("font: 10pt \"Microsoft YaHei\";\n"
+        fileNameLabel->setStyleSheet(QString::fromUtf8("font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
 "text-align: right;"));
 
         horizontalLayout_2->addWidget(fileNameLabel, 0, Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter);
@@ -196,7 +195,7 @@ public:
         openButton->setObjectName("openButton");
         openButton->setMinimumSize(QSize(100, 30));
         openButton->setMaximumSize(QSize(70, 24));
-        openButton->setStyleSheet(QString::fromUtf8("font: 9pt \"Microsoft YaHei\";"));
+        openButton->setStyleSheet(QString::fromUtf8("font: 9pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
 
         horizontalLayout_2->addWidget(openButton);
 
@@ -218,14 +217,14 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        groupBox->setTitle(QCoreApplication::translate("MainWindow", "Export", nullptr));
-        exportButton->setText(QCoreApplication::translate("MainWindow", "Export", nullptr));
-        groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "Volume Control", nullptr));
-        groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "Speed Control", nullptr));
-        speedLabel->setText(QCoreApplication::translate("MainWindow", "Speed: 1.0x", nullptr));
-        groupBox_4->setTitle(QCoreApplication::translate("MainWindow", "Import", nullptr));
-        fileNameLabel->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p>Current file: &quot;&quot;</p></body></html>", nullptr));
-        openButton->setText(QCoreApplication::translate("MainWindow", "Import", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("MainWindow", "\345\257\274\345\207\272", nullptr));
+        exportButton->setText(QCoreApplication::translate("MainWindow", "\345\257\274\345\207\272", nullptr));
+        groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "\351\237\263\351\207\217\346\216\247\345\210\266", nullptr));
+        groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "\351\200\237\345\272\246\346\216\247\345\210\266", nullptr));
+        speedLabel->setText(QCoreApplication::translate("MainWindow", "\345\200\215\351\200\237: 1.0x", nullptr));
+        groupBox_4->setTitle(QCoreApplication::translate("MainWindow", "\345\257\274\345\205\245", nullptr));
+        fileNameLabel->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p>\345\275\223\345\211\215\346\226\207\344\273\266: &quot;&quot;</p></body></html>", nullptr));
+        openButton->setText(QCoreApplication::translate("MainWindow", "\345\257\274\345\205\245", nullptr));
     } // retranslateUi
 
 };
